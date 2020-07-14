@@ -22,7 +22,7 @@ public class learn_java{
             dogList.add(newDog);
         }
 
-        dogList.get(1).name("Phillipe");
+        dogList.get(1).name("Jared");
         System.out.println(dogList.get(1).name());
         
         System.out.println("My name is: " + dogList.get(0).name());
@@ -33,9 +33,12 @@ public class learn_java{
 
 class dog{
     String name;
-    dog()
+    dog(){
+
+    }
+    dog(String s)
     {
-        bark();
+        name = s;
     }
     void bark(){
         System.out.println("Bark");
