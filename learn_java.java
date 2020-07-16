@@ -11,7 +11,11 @@ public class learn_java{
         dogList.remove(myDog);
         dogList.add(0, myDog);
 
+        HashMap<Integer,Integer> myMap = new HashMap<Integer,Integer>();
 
+        myMap.put(1, 100);
+        int check = myMap.get(1);
+        System.out.println(check);
         dog maple = dogList.get(0);
 
         maple.bark();
