@@ -1,6 +1,8 @@
-//Sandbox to play with Java functionarliy 
+//Sandbox to play with Java functionality
 
 import java.util.*;
+
+enum MOVEMENT{crawl, swim, jump, leg4Walk, leg2Walk;};
 
 public class learn_java{
     public static void main(String[] args) {
@@ -40,6 +42,8 @@ public class learn_java{
         //Testing Enums
         maple.setAnimalType("Omnivore");
         maple.printAnimalType();
+        maple.typeOfMovement(MOVEMENT.leg4Walk);
+        System.out.println(maple.myMove);
 
         //Testing Lists
         dogList.get(1).name("Jared");
@@ -51,10 +55,9 @@ public class learn_java{
     }
 }
 
-class dog extends Animal{
+class dog extends Mammal{
     dog( int count) {
         super("Dog", count);
-        midco();
         // TODO Auto-generated constructor stub
     }
 
@@ -76,7 +79,21 @@ class dog extends Animal{
     }
 }
 
-class Animal{
+interface Animal{
+    
+    void discoveredDate(int val);
+    void typeOfMovement(MOVEMENT val);
+
+}
+class Mammal implements Animal{
+    int date;
+    MOVEMENT myMove;
+    public void discoveredDate(int val){
+        date = val;
+    }
+    public void typeOfMovement(MOVEMENT val){
+        myMove = val;
+    }
     String animalKind;
     int animalNumbers;
     enum animalType{
@@ -84,9 +101,10 @@ class Animal{
     } 
     animalType animal_type;
 
-    Animal(String animal_kind, int count ){
+    Mammal(String animal_kind, int count ){
         animalKind = animal_kind;
         animalNumbers = count;
+        
     }
 
     void setAnimalType(String typeOfAnimal){
